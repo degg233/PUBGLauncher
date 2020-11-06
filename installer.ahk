@@ -12,6 +12,7 @@ IfMsgBox, Cancel
 } 
 
 ;Set file properties
+iconTarget := A_MyDocuments . "\PUBGLauncher\pubg.ico"
 FileTarget := A_MyDocuments . "\PUBGLauncher\PUBGLauncher.ps1"
 FileShortcutTarget := "powershell.exe -ExecutionPolicy Bypass -File """ . FileTarget . """"
 
@@ -20,6 +21,7 @@ FileCreateDir, %A_MyDocuments%\PUBGLauncher
 
 ;Download file
 UrlDownloadToFile, https://raw.githubusercontent.com/OhMyGetFxcked/PUBGLauncher/master/src/PUBGLauncher.ps1, %FileTarget%
+UrlDownloadToFile, https://raw.githubusercontent.com/OhMyGetFxcked/PUBGLauncher/master/src/pubg.ico, %iconTarget%
 
 ;Set details
 target := "powershell.exe"
