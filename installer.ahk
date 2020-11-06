@@ -19,19 +19,19 @@ FileShortcutTarget := "powershell.exe -ExecutionPolicy Bypass -File """ . FileTa
 ;Create folder
 FileCreateDir, %A_MyDocuments%\PUBGLauncher
 
-;Download file
+;Download files
 UrlDownloadToFile, https://raw.githubusercontent.com/OhMyGetFxcked/PUBGLauncher/master/src/PUBGLauncher.ps1, %FileTarget%
 UrlDownloadToFile, https://raw.githubusercontent.com/OhMyGetFxcked/PUBGLauncher/master/src/pubg.ico, %iconTarget%
 
 ;Set details
 target := "powershell.exe"
 linkFile := A_Desktop . "\Launch PUBG.lnk"
+startIn := A_MyDocuments . "\PUBGLauncher\"
 args := "-ExecutionPolicy Bypass -File """ . FileTarget . """"
 desc := "Deletes intro files and resets daily news"
-iconFile := PUBGFolder . "\TslGame\Binaries\Win64\TslGame.exe"
 
 ;Create shortcut to Desktop
-FileCreateShortcut, %target%, %linkFile%, , %args%, %desc%, %iconFile% 
+FileCreateShortcut, %target%, %linkFile%, %startIn%, %args%, %desc%, %iconTarget% 
 
 ;Notify user all is done
 msgBox, 64, PUBGLauncher, Installation finished.`n`nShortcut is located on your desktop.
