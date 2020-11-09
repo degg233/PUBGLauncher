@@ -7,6 +7,6 @@ Does the following when ran:
 
 # Notes
 * This script will read the Steam install location from your Registry
-* This script will search for the PUBG install location in your Steam game Libraries
+* This script will search for the PUBG install location in your Steam game libraries
 
 Pls add map selection.
